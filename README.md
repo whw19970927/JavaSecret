@@ -20,7 +20,7 @@
 
 ## 数据库💾
 
-> [数据库]()
+> [数据库](https://github.com/whw19970927/JavaSecret/blob/master/Collections/MySQL%20&%20Redis.md)
 
 ## Java基础☕️
 
