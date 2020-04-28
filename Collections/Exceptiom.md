@@ -277,7 +277,7 @@
 
   - 当在方法上声明抛出异常时，也需要进行文档说明。目的是为了给调用者提供尽可能多的信息，从而可以更好地避免或处理异常。
   - 在 Javadoc 添加 @throws 声明，并且描述抛出异常的场景。
-  ```java
+```java
     - public void doSomething(String input) throws MyBusinessException {
     - ...
     - }
@@ -287,7 +287,7 @@
   - 在抛出异常时，需要尽可能精确地描述问题和相关信息，这样无论是打印到日志中还是在监控工具中，都能够更容易被人阅读，从而可以更好地定位具体错误信息、错误的严重程度等。
   - 但这里并不是说要对错误信息长篇大论，因为本来 Exception 的类名就能够反映错误的原因，因此只需要用一到两句话描述即可。
   - 如果抛出一个特定的异常，它的类名很可能已经描述了这种错误。所以，你不需要提供很多额外的信息。一个很好的例子是 NumberFormatException 。当你以错误的格式提供 String 时，它将被 java.lang.Long 类的构造函数抛出。
-    ```java
+  ```java
     - try {
     -     new Long("xyz");
     - }  catch (NumberFormatException e) {
@@ -300,7 +300,7 @@
   - 但问题在于，只有匹配异常的第一个 catch 块会被执行。 因此，如果首先捕获 IllegalArgumentException ，则永远不会到达应该处理更具体的 NumberFormatException 的 catch 块，因为它是 IllegalArgumentException 的子类。
   - 总是优先捕获最具体的异常类，并将不太具体的 catch 块添加到列表的末尾。
   - 你可以在下面的代码片断中看到这样一个 try-catch 语句的例子。 第一个 catch 块处理所有 NumberFormatException 异常，第二个处理所有非 NumberFormatException 异常的IllegalArgumentException 异常。
-    ```java
+  ```java
     - public void catchMostSpecificExceptionFirst() {
     -    try {
     -       doSomething("A message");
@@ -310,13 +310,13 @@
     -       log.error(e)
     -    
     - }
-```
+   ```
   ### 6. 不要捕获 Throwable 类
 
   - Throwable 是所有异常和错误的超类。你可以在 catch 子句中使用它，但是你永远不应该这样做！
   - 如果在 catch 子句中使用 Throwable ，它不仅会捕获所有异常，也将捕获所有的错误。JVM 抛出错误，指出不应该由应用程序处理的严重问题。 典型的例子是 OutOfMemoryError 或者 StackOverflowError 。两者都是由应用程序控制之外的情况引起的，无法处理。
   - 所以，最好不要捕获 Throwable ，除非你确定自己处于一种特殊的情况下能够处理错误。
-    ```java
+  ```java
     - public void doNotCatchThrowable() {
     -    try {
     -    // do something
@@ -324,7 +324,7 @@
     - // don't do this!
     -   }
     - }
-    ```
+ ```
   ### 7. 不要忽略异常
 
   - 很多时候，开发者很有自信不会抛出异常，因此写了一个catch块，但是没有做任何处理或者记录日志。
@@ -350,8 +350,7 @@
 ```
   ### 8. 不要记录并抛出异常
 
-  - 这可能是本文中最常被忽略的最佳实践。可以发现很多代码甚至类库中都会有捕获异常、记录日志并再次抛出的逻辑。如下：
-  ```java
+  - 这可能是本文中最常被忽略的最佳实践。可以发现很多代码甚至类库中都会有捕获异常、记录日志并再次抛出的逻辑。如下：```java
     - try {
     -    new Long("xyz");
     -    } catch (NumberFormatException e) {
@@ -367,8 +366,7 @@
     - at java.lang.Long.(Long.java:965)
     - at com.stackify.example.TestExceptionHandling.logAndThrowException(TestExceptionHandling.java:63)
     - at com.stackify.example.TestExceptionHandling.main(TestExceptionHandling.java:58)
-  - 如上所示，后面的日志也没有附加更有用的信息。如果想要提供更加有用的信息，那么可以将异常包装为自定义异常。
-  ```java
+  - 如上所示，后面的日志也没有附加更有用的信息。如果想要提供更加有用的信息，那么可以将异常包装为自定义异常。```java
     - public void wrapException(String input) throws MyBusinessException {
     -    try {
     -    // do something
@@ -377,13 +375,13 @@
     -   }
     - }
     ```
-  - 因此，仅仅当想要处理异常时才去捕获，否则只需要在方法签名中声明让调用者去处理。
+ 因此，仅仅当想要处理异常时才去捕获，否则只需要在方法签名中声明让调用者去处理。
 
   ### 9. 包装异常时不要抛弃原始的异常
 
   - 捕获标准异常并包装为自定义异常是一个很常见的做法。这样可以添加更为具体的异常信息并能够做针对的异常处理。
-  - 在你这样做时，请确保将原始异常设置为原因（注：参考下方代码 NumberFormatException e 中的原始异常 e ）。Exception 类提供了特殊的构造函数方法，它接受一个 Throwable 作为参数。否则，你将会丢失堆栈跟踪和原始异常的消息，这将会使分析导致异常的异常事件变得困难。
-   ```java
+  - 在你这样做时，请确保将原始异常设置为原因（注：参考下方代码 NumberFormatException e 中的原始异常 e ）。Exception 类提供了特殊的构造函数方法，它接受一个 Throwable 作为参数。否则，你将会丢失堆栈跟踪和原始异常的消息，这将会使分析导致异常的异常事件变得困难
+  ```java
    - public void wrapException(String input) throws MyBusinessException {
     -    try {
     -    // do something
@@ -391,7 +389,7 @@
     -    throw new MyBusinessException("A message that describes the error.", e);
     -    }
     - }
-```
+ ```
   ### 10. 不要使用异常控制程序的流程
 
   - 不应该使用异常控制应用的执行流程，例如，本应该使用if语句进行条件判断的情况下，你却使用异常处理，这是非常不好的习惯，会严重影响应用的性能。
