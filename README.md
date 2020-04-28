@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=CGXL8C1_WlI
 
 ## 数据库💾
 
-> [数据库](https://github.com/whw19970927/JavaSecret/blob/master/Collections/MySQL%20&%20Redis.md)
+> [数据库](https://github.com/whw19970927/JavaSecret/blob/master/Collections/MySQL.md)
 
 ## Java基础☕️
 
