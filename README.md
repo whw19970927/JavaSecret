@@ -1,10 +1,10 @@
 # 前言
 
-本项目主要从以下几个方向着手，几乎网罗了常见的面试题，可作为面试宝典巩固复习，冲就完事了！在此送一段视频给大家，也是支持我一直学习下去的动力，
+本项目主要从以下几个方向着手，几乎网罗了常见的面试题，可作为面试宝典巩固复习，冲就完事了！在此送一段视频给大家，也是支持我一直学习下去的动力，同时也希望大家给个⭐⭐谢谢！
 
-**There is something you would lose if you were not there,** 
+**There is something they would lose if you were not there,** 
 
-**there is something you would miss if you were not there,** 
+**there is something they would miss if you were not there,** 
 
 **YOU DO MAKE A DIFFERENCE!** 
 
