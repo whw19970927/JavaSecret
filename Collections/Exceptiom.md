@@ -1,4 +1,4 @@
-# 7、java异常
+# Java异常
 
 ## 1.Error 和 Exception 区别是什么？
 
@@ -350,14 +350,15 @@
 ```
   ### 8. 不要记录并抛出异常
 
-  - 这可能是本文中最常被忽略的最佳实践。可以发现很多代码甚至类库中都会有捕获异常、记录日志并再次抛出的逻辑。如下：```java
+  - 这可能是本文中最常被忽略的最佳实践。可以发现很多代码甚至类库中都会有捕获异常、记录日志并再次抛出的逻辑。如下：
+```java
     - try {
     -    new Long("xyz");
     -    } catch (NumberFormatException e) {
     -    log.error(e);
     -    throw e;
     - }
-    ```
+  ```
   - 这个处理逻辑看着是合理的。但这经常会给同一个异常输出多条日志。如下：
     - 17:44:28,945 ERROR TestExceptionHandling:65 - java.lang.NumberFormatException: For input string: "xyz"
     - Exception in thread "main" java.lang.NumberFormatException: For input string: "xyz"
@@ -366,7 +367,8 @@
     - at java.lang.Long.(Long.java:965)
     - at com.stackify.example.TestExceptionHandling.logAndThrowException(TestExceptionHandling.java:63)
     - at com.stackify.example.TestExceptionHandling.main(TestExceptionHandling.java:58)
-  - 如上所示，后面的日志也没有附加更有用的信息。如果想要提供更加有用的信息，那么可以将异常包装为自定义异常。```java
+  - 如上所示，后面的日志也没有附加更有用的信息。如果想要提供更加有用的信息，那么可以将异常包装为自定义异常。
+```java
     - public void wrapException(String input) throws MyBusinessException {
     -    try {
     -    // do something
@@ -374,7 +376,7 @@
     -    throw new MyBusinessException("A message that describes the error.", e);
     -   }
     - }
-    ```
+```
  因此，仅仅当想要处理异常时才去捕获，否则只需要在方法签名中声明让调用者去处理。
 
   ### 9. 包装异常时不要抛弃原始的异常
