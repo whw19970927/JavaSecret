@@ -44,7 +44,7 @@ https://www.youtube.com/watch?v=CGXL8C1_WlI
 
 ## 异常❌
 
-> [异常]()
+> [异常](https://github.com/whw19970927/JavaSecret/blob/master/Collections/Exceptiom.md)
 
 ## 操作系统🖥
 
