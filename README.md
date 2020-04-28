@@ -28,7 +28,7 @@ https://www.youtube.com/watch?v=CGXL8C1_WlI
 
 ## 并发和多线程♨
 
-> [并发和多线程]()
+> [并发和多线程](https://github.com/whw19970927/JavaSecret/blob/master/Collections/CSnet.md)
 
 ## 数据库💾
 
@@ -57,4 +57,5 @@ https://www.youtube.com/watch?v=CGXL8C1_WlI
 
 # 致谢
 
-感谢一位西交的朋友在学习路上的支持，这个项目也有他的贡献，希望都可以找到好的offer。
+感谢一位网友在学习路上的支持和同行，这个项目也有他的贡献，同时也恭喜他美团上岸。
+也希望自己能有好的去处吧。
