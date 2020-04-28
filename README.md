@@ -36,7 +36,7 @@ https://www.youtube.com/watch?v=CGXL8C1_WlI
 
 ## Java基础☕️
 
-> [Java]()
+> [Java](https://github.com/whw19970927/JavaSecret/blob/master/Collections/JavaBasis.md)
 
 ## 集合容器🍸
 
