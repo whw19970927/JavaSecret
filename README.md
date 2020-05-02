@@ -40,7 +40,7 @@ https://www.youtube.com/watch?v=CGXL8C1_WlI
 
 ## 集合容器🍸
 
-> [集合容器]()
+> [集合容器](https://github.com/whw19970927/JavaSecret/blob/master/Collections/collections.md)
 
 ## 异常❌
 
